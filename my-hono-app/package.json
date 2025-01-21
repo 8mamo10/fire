@@ -1,9 +1,11 @@
 {
   "name": "my-hono-app",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "dev": "run-p dev:*",
+    "dev:wrangler": "wrangler pages dev dist --live-reload",
+    "dev:esbuild": "esbuild --bundle src/server.js --format=esm --watch --outfile=dist/_worker.js",
+    "build": "esbuild --bundle src/server.js --format=esm --outfile=dist/_worker.js",
+    "deploy": "wrangler pages publish dist"
   },
   "dependencies": {
     "hono": "^4.6.16"
