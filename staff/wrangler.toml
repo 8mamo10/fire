@@ -18,6 +18,10 @@ pages_build_output_dir = "./dist"
 # binding = "DB"
 # database_name = "my-database"
 # database_id = ""
+[[d1_databases]]
+binding = "DB"
+database_name = "staff-directory"
+database_id = "31dff3ad-a8a6-4540-8cd1-c71173cc087d"
 
 # [ai]
 # binding = "AI"
