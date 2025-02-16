@@ -19,7 +19,22 @@ export const findAllEmployees = async (db: D1Database) => {
       JOIN departments ON employees.department_id = departments.department_id
       `;
   const { results } = await db.prepare(query).all();
-  const employees = results;
+  //const employees = results;
+  const employees: Employee[] = results.map((item) => {
+    return {
+      employee_id: item.employee_id as string,
+      name: item.name as string,
+      position: item.position as string,
+      image_url: item.image_url as string,
+      join_date: item.join_date as string,
+      location_id: item.location_id as number,
+      department_id: item.department_id as number,
+      location_name: item.location_name as string,
+      department_name: item.department_name as string,
+      image_file: item.image_file as File,
+    };
+  });
+
   return employees;
 };
 
