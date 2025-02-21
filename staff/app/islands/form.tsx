@@ -34,8 +34,8 @@ const EmployeeForm: FC = ({ locations, departments }) => {
 
       if (!response.ok) throw new Error('Network response was not ok.');
 
-      const result = await response.json();
-      console.log('Success:', result);
+      //const result = await response.json();
+      //console.log('Success:', result);
       setEmployee({});
     } catch (error) {
       console.error('Error:', error);
