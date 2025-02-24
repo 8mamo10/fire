@@ -13,6 +13,9 @@ pages_build_output_dir = "./dist"
 # [[r2_buckets]]
 # binding = "MY_BUCKET"
 # bucket_name = "my-bucket"
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "employee-avatars"
 
 # [[d1_databases]]
 # binding = "DB"
