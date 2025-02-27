@@ -13,15 +13,14 @@ export const POST = createRoute(async (c) => {
     if (imageFile instanceof File) {
       const key = `${new Date().getTime()}-${imageFile.name}`;
       const fileBuffer = await imageFile.arrayBuffer();
-      /*
-            await c.env.MY_BUCKET.put(key, fileBuffer, {
-              httpMetadata: {
-                contentType: imageFile.type || 'application/octet-stream',
-              },
-            });
+
+      await c.env.MY_BUCKET.put(key, fileBuffer, {
+        httpMetadata: {
+          contentType: imageFile.type || 'application/octet-stream',
+        },
+      });
       console.log(`File uploaded successfully: ${key}`);
       imageUrl = `https://pub-8d936184779047cc96686a631f318fce.r2.dev/${key}`;
-      */
     }
 
     const employeeData: Employee = {
