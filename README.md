@@ -13,3 +13,7 @@ $ npx wrangler d1 execute staff-directory --command "SELECT name FROM sqlite_sch
 $ npx wrangler d1 execute staff-directory --file=./schema.sql
 $ npx wrangler d1 execute staff-directory --file=./schema.sql --remote
 ```
+
+```
+$ npx wrangler r2 bucket create employee-avatars
+```
